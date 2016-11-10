@@ -24,6 +24,9 @@ class Kernel extends ConsoleKernel
         Commands\Project\ProjectArchive::class,
         Commands\Project\ProjectUnarchive::class,
         Commands\Project\ProjectCurrencyUpdate::class,
+        Commands\Project\ProjectMemberList::class,
+        Commands\Project\ProjectMemberAdd::class,
+        Commands\Project\ProjectMemberRemove::class,
 
         Commands\Currency\CurrencyList::class,
         Commands\Currency\CurrencyCreate::class,
