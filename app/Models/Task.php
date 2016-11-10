@@ -3,9 +3,12 @@
 namespace Keikaku\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Keikaku\Traits\Uuids;
 
 class Task extends Model
 {
+    use Uuids;
+
     public $table = 'task';
 
     public $incrementing = false;

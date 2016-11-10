@@ -3,9 +3,12 @@
 namespace Keikaku\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Keikaku\Traits\Uuids;
 
 class Comment extends Model
 {
+    use Uuids;
+
     public $table = 'comment';
 
     public $incrementing = false;
