@@ -4,7 +4,11 @@ namespace Keikaku\Providers;
 
 use Illuminate\Hashing\BcryptHasher;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use Keikaku\Contracts\Services\CurrencyService;
+use Keikaku\Contracts\Services\ProjectService;
 use Keikaku\Contracts\Services\UserService;
+use Keikaku\Services\DefaultCurrencyService;
+use Keikaku\Services\DefaultProjectService;
 use Keikaku\Services\DefaultUserService;
 
 class ServiceProvider extends BaseServiceProvider
@@ -27,8 +31,15 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->app->singleton(UserService::class, function () {
-
             return new DefaultUserService(new BcryptHasher());
+        });
+
+        $this->app->singleton(ProjectService::class, function () {
+            return new DefaultProjectService();
+        });
+
+        $this->app->singleton(CurrencyService::class, function () {
+            return new DefaultCurrencyService();
         });
     }
 }

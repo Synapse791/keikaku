@@ -34,16 +34,16 @@ class DefaultUserService extends BaseService implements UserService
     public function create(string $name, string $email, string $password)
     {
         if (empty($name))
-            return $this->setBadRequest('The name field cannot be empty');
+            return $this->setBadRequestError('The name field cannot be empty');
 
         if (empty($email))
-            return $this->setBadRequest('The email field cannot be empty');
+            return $this->setBadRequestError('The email field cannot be empty');
 
         if (empty($password))
-            return $this->setBadRequest('The password field cannot be empty');
+            return $this->setBadRequestError('The password field cannot be empty');
 
         if (strlen($password) < 6)
-            return $this->setBadRequest('The password field must be at least 6 characters long');
+            return $this->setBadRequestError('The password field must be at least 6 characters long');
 
         $newUser = new User();
 
