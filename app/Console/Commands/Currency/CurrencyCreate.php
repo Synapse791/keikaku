@@ -25,7 +25,7 @@ class CurrencyCreate extends Command
         $name = $this->ask('Enter the name for the new currency');
         $symbol = $this->ask('Enter the symbol for the new currency');
 
-        if (strlen($symbol) !== 1) {
+        if (mb_strlen($symbol) !== 1) {
             $this->error('The symbol field must only be a single character');
             return;
         }
