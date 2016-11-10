@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Keikaku\Console\Commands\UserCreate;
 use Keikaku\Console\Commands\UserDelete;
 use Keikaku\Console\Commands\UserList;
+use Keikaku\Console\Commands\UserUpdate;
 
 class Kernel extends ConsoleKernel
 {
@@ -18,6 +19,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         UserList::class,
         UserCreate::class,
+        UserUpdate::class,
         UserDelete::class,
     ];
 
