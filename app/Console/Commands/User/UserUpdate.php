@@ -37,19 +37,12 @@ class UserUpdate extends Command
 
         $data = [];
 
-        if ($this->confirm('Would you like to update the user\'s name?'))
-            $data['name'] = $this->ask('Enter the user\'s new name');
+        $data['name'] = $this->ask('Enter the user\'s new name', $user->name);
 
-        if ($this->confirm('Would you like to update the user\'s email?'))
-            $data['email'] = $this->ask('Enter the user\'s new email');
+        $data['email'] = $this->ask('Enter the user\'s new email', $user->email);
 
         if ($this->confirm('Would you like to update the user\'s password?'))
             $data['password'] = $this->secret('Enter the user\'s new password');
-
-        if (empty($data)) {
-            $this->info('Nothing to update!');
-            return;
-        }
 
         if ($this->userService->update($user, $data)) {
             $user = $this->userRepository->findOneById($user->id);
