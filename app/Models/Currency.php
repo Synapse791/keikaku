@@ -10,6 +10,8 @@ class Currency extends Model
 
     public $timestamps = false;
 
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
         'symbol',

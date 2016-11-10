@@ -10,6 +10,8 @@ class Category extends Model
 
     public $timestamps = false;
 
+    public $incrementing = false;
+
     protected $fillable = [
         'name',
     ];

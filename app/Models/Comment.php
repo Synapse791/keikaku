@@ -8,6 +8,8 @@ class Comment extends Model
 {
     public $table = 'comment';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'content',
     ];

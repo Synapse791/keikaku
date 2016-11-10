@@ -8,6 +8,8 @@ class Task extends Model
 {
     public $table = 'task';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'title',
         'description',
