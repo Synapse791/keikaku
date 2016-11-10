@@ -30,6 +30,7 @@ class Kernel extends ConsoleKernel
 
         Commands\Currency\CurrencyList::class,
         Commands\Currency\CurrencyCreate::class,
+        Commands\Currency\CurrencyUpdate::class,
     ];
 
     /**
