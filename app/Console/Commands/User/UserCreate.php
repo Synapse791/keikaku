@@ -1,6 +1,6 @@
 <?php
 
-namespace Keikaku\Console\Commands;
+namespace Keikaku\Console\Commands\User;
 
 use Illuminate\Console\Command;
 use Keikaku\Contracts\Services\UserService;

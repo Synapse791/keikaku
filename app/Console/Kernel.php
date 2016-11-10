@@ -4,10 +4,6 @@ namespace Keikaku\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Keikaku\Console\Commands\UserCreate;
-use Keikaku\Console\Commands\UserDelete;
-use Keikaku\Console\Commands\UserList;
-use Keikaku\Console\Commands\UserUpdate;
 
 class Kernel extends ConsoleKernel
 {
@@ -17,10 +13,19 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        UserList::class,
-        UserCreate::class,
-        UserUpdate::class,
-        UserDelete::class,
+        Commands\User\UserList::class,
+        Commands\User\UserCreate::class,
+        Commands\User\UserUpdate::class,
+        Commands\User\UserDelete::class,
+
+        Commands\Project\ProjectList::class,
+        Commands\Project\ProjectCreate::class,
+        Commands\Project\ProjectUpdate::class,
+        Commands\Project\ProjectArchive::class,
+        Commands\Project\ProjectUnarchive::class,
+
+        Commands\Currency\CurrencyList::class,
+        Commands\Currency\CurrencyCreate::class,
     ];
 
     /**
