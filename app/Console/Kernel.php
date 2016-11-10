@@ -4,6 +4,8 @@ namespace Keikaku\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Keikaku\Console\Commands\UserCreate;
+use Keikaku\Console\Commands\UserDelete;
 use Keikaku\Console\Commands\UserList;
 
 class Kernel extends ConsoleKernel
@@ -15,6 +17,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         UserList::class,
+        UserCreate::class,
+        UserDelete::class,
     ];
 
     /**
