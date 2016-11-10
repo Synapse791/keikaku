@@ -10,8 +10,8 @@ class CreateCurrencyTable extends Migration
     {
         Schema::create('currency', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('name');
-            $table->char('symbol', 1);
+            $table->string('name')->unique();
+            $table->char('symbol', 1)->unique();
 
             $table->primary('id');
         });

@@ -11,8 +11,8 @@ class CreateProjectTable extends Migration
         Schema::create('project', function (Blueprint $table) {
             $table->uuid('id');
             $table->uuid('currency_id');
-            $table->string('title');
-            $table->integer('budget');
+            $table->string('title')->unique();
+            $table->integer('budget')->nullable();
             $table->timestamps();
 
             $table->primary('id');

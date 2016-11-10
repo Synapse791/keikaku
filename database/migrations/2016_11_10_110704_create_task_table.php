@@ -14,12 +14,13 @@ class CreateTaskTable extends Migration
             $table->uuid('category_id');
             $table->string('title');
             $table->text('description');
-            $table->integer('estimated_cost');
-            $table->integer('actual_cost');
-            $table->timestamp('due_date');
+            $table->integer('estimated_cost')->nullable();
+            $table->integer('actual_cost')->nullable();
+            $table->timestamp('due_date')->nullable();
             $table->timestamps();
 
             $table->primary('id');
+            $table->index('due_date');
         });
     }
 
