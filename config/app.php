@@ -178,6 +178,8 @@ return [
         Keikaku\Providers\EventServiceProvider::class,
         Keikaku\Providers\RouteServiceProvider::class,
 
+        Keikaku\Providers\RepositoryProvider::class,
+
     ],
 
     /*
