@@ -179,6 +179,7 @@ return [
         Keikaku\Providers\RouteServiceProvider::class,
 
         Keikaku\Providers\RepositoryProvider::class,
+        Keikaku\Providers\ServiceProvider::class,
 
     ],
 
