@@ -3,9 +3,11 @@
 namespace Keikaku\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Keikaku\Contracts\Repository\CategoryRepository;
 use Keikaku\Contracts\Repository\CurrencyRepository;
 use Keikaku\Contracts\Repository\ProjectRepository;
 use Keikaku\Contracts\Repository\UserRepository;
+use Keikaku\Repositories\DefaultCategoryRepository;
 use Keikaku\Repositories\DefaultCurrencyRepository;
 use Keikaku\Repositories\DefaultProjectRepository;
 use Keikaku\Repositories\DefaultUserRepository;
@@ -39,6 +41,10 @@ class RepositoryProvider extends ServiceProvider
 
         $this->app->singleton(CurrencyRepository::class, function () {
             return new DefaultCurrencyRepository();
+        });
+
+        $this->app->singleton(CategoryRepository::class, function () {
+            return new DefaultCategoryRepository();
         });
     }
 }
