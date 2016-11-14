@@ -12,7 +12,8 @@ class CreateProjectTable extends Migration
             $table->uuid('id');
             $table->uuid('currency_id');
             $table->string('title')->unique();
-            $table->integer('budget')->nullable();
+            $table->float('budget', 12, 2)->nullable();
+            $table->boolean('archived')->default(false);
             $table->timestamps();
 
             $table->primary('id');
