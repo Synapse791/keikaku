@@ -31,6 +31,12 @@ class Kernel extends ConsoleKernel
         Commands\Currency\CurrencyList::class,
         Commands\Currency\CurrencyCreate::class,
         Commands\Currency\CurrencyUpdate::class,
+
+        Commands\Category\CategoryList::class,
+        Commands\Category\CategoryCreate::class,
+        Commands\Category\CategoryUpdate::class,
+        Commands\Category\CategoryDelete::class,
+
     ];
 
     /**
