@@ -16,10 +16,10 @@ interface ProjectService extends ServiceErrors
      *
      * @param string $title
      * @param Currency $currency
-     * @param int|null $budget
+     * @param float|null $budget
      * @return bool
      */
-    function create(string $title, Currency $currency, int $budget = null);
+    function create(string $title, Currency $currency, float $budget = null);
 
     /**
      * Updates an existing Project
