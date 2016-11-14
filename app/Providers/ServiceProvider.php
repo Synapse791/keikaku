@@ -7,10 +7,12 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Keikaku\Contracts\Services\CategoryService;
 use Keikaku\Contracts\Services\CurrencyService;
 use Keikaku\Contracts\Services\ProjectService;
+use Keikaku\Contracts\Services\TaskService;
 use Keikaku\Contracts\Services\UserService;
 use Keikaku\Services\DefaultCategoryService;
 use Keikaku\Services\DefaultCurrencyService;
 use Keikaku\Services\DefaultProjectService;
+use Keikaku\Services\DefaultTaskService;
 use Keikaku\Services\DefaultUserService;
 
 class ServiceProvider extends BaseServiceProvider
@@ -46,6 +48,10 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->app->singleton(CategoryService::class, function () {
             return new DefaultCategoryService();
+        });
+
+        $this->app->singleton(TaskService::class, function () {
+            return new DefaultTaskService();
         });
     }
 }
