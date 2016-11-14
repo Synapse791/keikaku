@@ -28,7 +28,13 @@ class UserUpdate extends Command
     {
         $id = $this->argument('user_id');
 
-        $user = $this->userRepository->findOneById($id);
+        $user = $this->userRepository->findOneById($id, [
+            'id',
+            'name',
+            'email',
+            'created_at',
+            'updated_at',
+        ]);
 
         if (!$user) {
             $this->error("User with ID {$id} not found!");

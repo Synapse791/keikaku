@@ -22,7 +22,13 @@ class UserList extends Command
 
     public function handle()
     {
-        $users = $this->userRepository->find();
+        $users = $this->userRepository->find([], [
+            'id',
+            'name',
+            'email',
+            'created_at',
+            'updated_at',
+        ]);
 
         if ($users->isEmpty())
             $this->warn('No users in the database!');
