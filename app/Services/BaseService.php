@@ -89,6 +89,7 @@ class BaseService implements ServiceErrors
             ->setErrorDescription($message);
         return false;
     }
+
     /**
      * Shortcut to set 404 Not Found error
      *
@@ -103,6 +104,7 @@ class BaseService implements ServiceErrors
             ->setErrorDescription($message);
         return false;
     }
+
     /**
      * Shortcut to set 409 Conflict error
      *
@@ -117,6 +119,7 @@ class BaseService implements ServiceErrors
             ->setErrorDescription($message);
         return false;
     }
+
     /**
      * Shortcut to set 500 Internal Server error
      *
@@ -131,6 +134,7 @@ class BaseService implements ServiceErrors
             ->setErrorDescription($message);
         return false;
     }
+
     /**
      * Tries to save an entity
      *
@@ -151,6 +155,23 @@ class BaseService implements ServiceErrors
             return $this->setInternalServerError($e->getMessage());
         }
     }
+
+    /**
+     * Tries to delete an entity
+     *
+     * @param Model $entity
+     * @return bool
+     */
+    public function deleteEntity($entity)
+    {
+        try {
+            $entity->delete();
+            return true;
+        } catch (\PDOException $e) {
+            return $this->setInternalServerError($e->getMessage());
+        }
+    }
+
     /**
      * Tries to associate an entity with a relationship
      *
@@ -167,6 +188,7 @@ class BaseService implements ServiceErrors
             return $this->setInternalServerError($e->getMessage());
         }
     }
+
     /**
      * Tries to dissociate a relationship
      *
@@ -182,6 +204,7 @@ class BaseService implements ServiceErrors
             return $this->setInternalServerError($e->getMessage());
         }
     }
+
     /**
      * Tries to attach an entity to a relationship
      *
@@ -198,6 +221,7 @@ class BaseService implements ServiceErrors
             return $this->setInternalServerError($e->getMessage());
         }
     }
+    
     /**
      * Tries to detach an entity to a relationship
      *
