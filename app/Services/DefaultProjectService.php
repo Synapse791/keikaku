@@ -9,7 +9,7 @@ use Keikaku\Models\User;
 
 class DefaultProjectService extends BaseService implements ProjectService
 {
-    public function create(string $title, Currency $currency, int $budget = null)
+    public function create(string $title, Currency $currency, float $budget = null)
     {
         if (empty($title))
             return $this->setBadRequestError('The title field cannot be empty');
