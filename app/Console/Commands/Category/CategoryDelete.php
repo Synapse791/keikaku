@@ -33,6 +33,16 @@ class CategoryDelete extends Command
             return;
         }
 
+        if ($category->tasks()->count() > 0) {
+            $this->warn("This category contains the following tasks!\n");
+
+            foreach ($category->tasks as $task) {
+                $this->line("  > {$task->id}: {$task->name}");
+            }
+            $this->line('Categories can only be removed if they contain no tasks');
+            return;
+        }
+
         $this->line("\n  ID   : {$category->id}");
         $this->line("  Name : {$category->name}");
 

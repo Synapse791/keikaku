@@ -37,6 +37,9 @@ class Kernel extends ConsoleKernel
         Commands\Category\CategoryUpdate::class,
         Commands\Category\CategoryDelete::class,
 
+        Commands\Task\TaskList::class,
+        Commands\Task\TaskShow::class,
+        Commands\Task\TaskCreate::class,
     ];
 
     /**
